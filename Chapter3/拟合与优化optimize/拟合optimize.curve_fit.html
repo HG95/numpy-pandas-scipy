@@ -1,0 +1,1887 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>拟合curve_fit · python 学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="HHG">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-vs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="求解非线性方程组fsolve.html" />
+    
+    
+    <link rel="prev" href="最小二乘法拟合leastsq.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../Chapter1/">
+            
+                <a href="../../Chapter1/">
+            
+                    
+                    Numpy
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../Chapter1/Numpy 创建数组.html">
+            
+                <a href="../../Chapter1/Numpy 创建数组.html">
+            
+                    
+                    Numpy 创建数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../Chapter1/Numpy 数组遍历.html">
+            
+                <a href="../../Chapter1/Numpy 数组遍历.html">
+            
+                    
+                    Numpy 数组遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../Chapter1/Numpy 数组操作.html">
+            
+                <a href="../../Chapter1/Numpy 数组操作.html">
+            
+                    
+                    Numpy 数组操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../Chapter1/axis=0 axis=1的理解.html">
+            
+                <a href="../../Chapter1/axis=0 axis=1的理解.html">
+            
+                    
+                    axis=0 axis=1的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../Chapter1/NumPy 排序、条件刷选函数.html">
+            
+                <a href="../../Chapter1/NumPy 排序、条件刷选函数.html">
+            
+                    
+                    NumPy 排序、条件刷选函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../../Chapter1/常用统计函数.html">
+            
+                <a href="../../Chapter1/常用统计函数.html">
+            
+                    
+                    常用统计函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../../Chapter1/NumPy 常用函数.html">
+            
+                <a href="../../Chapter1/NumPy 常用函数.html">
+            
+                    
+                    NumPy 常用函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../../Chapter1/NumPy 协方差cov与相关系数corrcoef的使用.html">
+            
+                <a href="../../Chapter1/NumPy 协方差cov与相关系数corrcoef的使用.html">
+            
+                    
+                    NumPy 协方差cov与相关系数corrcoef的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../../Chapter1/numpy.set_printoptions.html">
+            
+                <a href="../../Chapter1/numpy.set_printoptions.html">
+            
+                    
+                    numpy.set_printoptions()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../../Chapter1/numpy.datetime64日期函数.html">
+            
+                <a href="../../Chapter1/numpy.datetime64日期函数.html">
+            
+                    
+                    numpy.datetime64()日期函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../../Chapter1/numpy.split函数.html">
+            
+                <a href="../../Chapter1/numpy.split函数.html">
+            
+                    
+                    numpy.split()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../../Chapter1/Numpy np.count_nonzero.html">
+            
+                <a href="../../Chapter1/Numpy np.count_nonzero.html">
+            
+                    
+                    Numpy np.count_nonzero
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="../../Chapter1/Numpy np.zeros_like函数.html">
+            
+                <a href="../../Chapter1/Numpy np.zeros_like函数.html">
+            
+                    
+                    Numpy np.zeros_like()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.14" data-path="../../Chapter1/Numpy 上三角矩阵triu和下三角矩阵tril.html">
+            
+                <a href="../../Chapter1/Numpy 上三角矩阵triu和下三角矩阵tril.html">
+            
+                    
+                    Numpy 上三角矩阵triu和下三角矩阵tril
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.15" data-path="../../Chapter1/NumPy 矩阵库Matrix.html">
+            
+                <a href="../../Chapter1/NumPy 矩阵库Matrix.html">
+            
+                    
+                    NumPy 矩阵库(Matrix)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16" data-path="../../Chapter1/NumPy 线性代数中的运算.html">
+            
+                <a href="../../Chapter1/NumPy 线性代数中的运算.html">
+            
+                    
+                    NumPy 线性代数中的运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.17" data-path="../../Chapter1/NumPy 降维和增维.html">
+            
+                <a href="../../Chapter1/NumPy 降维和增维.html">
+            
+                    
+                    NumPy 降维和增维
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.18" data-path="../../Chapter1/Numpy中reshape函数.html">
+            
+                <a href="../../Chapter1/Numpy中reshape函数.html">
+            
+                    
+                    Numpy中reshape函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.19" data-path="../../Chapter1/Numpy squeeze函数.html">
+            
+                <a href="../../Chapter1/Numpy squeeze函数.html">
+            
+                    
+                    Numpy squeeze()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.20" data-path="../../Chapter1/Numpy random随机函数.html">
+            
+                <a href="../../Chapter1/Numpy random随机函数.html">
+            
+                    
+                    Numpy random函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.21" data-path="../../Chapter1/Numpy 字符串操作.html">
+            
+                <a href="../../Chapter1/Numpy 字符串操作.html">
+            
+                    
+                    Numpy 字符串操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22" data-path="../../Chapter1/Numpy mgrid和meshgrid的区别和使用.html">
+            
+                <a href="../../Chapter1/Numpy mgrid和meshgrid的区别和使用.html">
+            
+                    
+                    Numpy mgrid()和meshgrid()的区别和使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.23" data-path="../../Chapter1/Numpy 数组填充np.pad函数.html">
+            
+                <a href="../../Chapter1/Numpy 数组填充np.pad函数.html">
+            
+                    
+                    Numpy 数组填充np.pad()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.24" data-path="../../Chapter1/Numpy 数学函数.html">
+            
+                <a href="../../Chapter1/Numpy 数学函数.html">
+            
+                    
+                    Numpy 数学函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.25" data-path="../../Chapter1/numpy nan_to_num数.html">
+            
+                <a href="../../Chapter1/numpy nan_to_num数.html">
+            
+                    
+                    numpy.nan_to_num
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../Chapter2/">
+            
+                <a href="../../Chapter2/">
+            
+                    
+                    Pandas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../Chapter2/Series cat.html">
+            
+                <a href="../../Chapter2/Series cat.html">
+            
+                    
+                    Series.cat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../Chapter2/Pandas melt.html">
+            
+                <a href="../../Chapter2/Pandas melt.html">
+            
+                    
+                    Pandas.melt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../Chapter2/Pandas set_option.html">
+            
+                <a href="../../Chapter2/Pandas set_option.html">
+            
+                    
+                    Pandas set_option
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../../Chapter2/Pandas 数据结构Series,DataFrame.html">
+            
+                <a href="../../Chapter2/Pandas 数据结构Series,DataFrame.html">
+            
+                    
+                    Pandas 数据结构Series,DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../../Chapter2/Pandas 数据获取与查询.html">
+            
+                <a href="../../Chapter2/Pandas 数据获取与查询.html">
+            
+                    
+                    Pandas 数据获取与查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../../Chapter2/Pandas isin索引和~反向索引.html">
+            
+                <a href="../../Chapter2/Pandas isin索引和~反向索引.html">
+            
+                    
+                    Pandas isin索引和~反向索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../../Chapter2/Pandas ix 、loc 、 iloc区别.html">
+            
+                <a href="../../Chapter2/Pandas ix 、loc 、 iloc区别.html">
+            
+                    
+                    Pandas ix 、loc 、 iloc区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../../Chapter2/Pandas 数据对齐输出.html">
+            
+                <a href="../../Chapter2/Pandas 数据对齐输出.html">
+            
+                    
+                    Pandas 数据对齐输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.9" data-path="../../Chapter2/Pandas Index对象.html">
+            
+                <a href="../../Chapter2/Pandas Index对象.html">
+            
+                    
+                    Pandas Index对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.10" data-path="../../Chapter2/Pandas MultiIndex对象.html">
+            
+                <a href="../../Chapter2/Pandas MultiIndex对象.html">
+            
+                    
+                    Pandas MultiIndex对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.11" data-path="../../Chapter2/Pandas 根据条件获取元素所在的位置（索引）.html">
+            
+                <a href="../../Chapter2/Pandas 根据条件获取元素所在的位置（索引）.html">
+            
+                    
+                    Pandas 根据条件获取元素所在的位置（索引）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.12" data-path="../../Chapter2/Pandas 数据合并与重塑.html">
+            
+                <a href="../../Chapter2/Pandas 数据合并与重塑.html">
+            
+                    
+                    Pandas 数据合并与重塑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.13" data-path="../../Chapter2/Pandas 轴旋转stack和unstack.html">
+            
+                <a href="../../Chapter2/Pandas 轴旋转stack和unstack.html">
+            
+                    
+                    Pandas 轴旋转stack和unstack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.14" data-path="../../Chapter2/Pandas 缺失值处理.html">
+            
+                <a href="../../Chapter2/Pandas 缺失值处理.html">
+            
+                    
+                    Pandas 缺失值处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.15" data-path="../../Chapter2/Pandas 数据排序.html">
+            
+                <a href="../../Chapter2/Pandas 数据排序.html">
+            
+                    
+                    Pandas 数据排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.16" data-path="../../Chapter2/Pandas 描述和汇总统计.html">
+            
+                <a href="../../Chapter2/Pandas 描述和汇总统计.html">
+            
+                    
+                    Pandas 描述和汇总统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.17" data-path="../../Chapter2/Pandas 众数mode.html">
+            
+                <a href="../../Chapter2/Pandas 众数mode.html">
+            
+                    
+                    Pandas 众数mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.18" data-path="../../Chapter2/Pandas 分位数quantile.html">
+            
+                <a href="../../Chapter2/Pandas 分位数quantile.html">
+            
+                    
+                    Pandas 分位数quantile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.19" data-path="../../Chapter2/Pandas 统计函数corr.html">
+            
+                <a href="../../Chapter2/Pandas 统计函数corr.html">
+            
+                    
+                    Pandas 统计函数corr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.20" data-path="../../Chapter2/Pandas 统计函数scatter_matrix.html">
+            
+                <a href="../../Chapter2/Pandas 统计函数scatter_matrix.html">
+            
+                    
+                    Pandas 统计函数scatter_matrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.21" data-path="../../Chapter2/Pandas 使用测试模块制作伪数据.html">
+            
+                <a href="../../Chapter2/Pandas 使用测试模块制作伪数据.html">
+            
+                    
+                    Pandas 使用测试模块制作伪数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.22" data-path="../../Chapter2/Pandas 字符数据的处理方法.html">
+            
+                <a href="../../Chapter2/Pandas 字符数据的处理方法.html">
+            
+                    
+                    Pandas 字符数据的处理方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.23" data-path="../../Chapter2/Pandas 时间序列—date_range函数.html">
+            
+                <a href="../../Chapter2/Pandas 时间序列—date_range函数.html">
+            
+                    
+                    Pandas 时间序列—date_range函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.24" data-path="../../Chapter2/Pandas 时间序列—period_range函数.html">
+            
+                <a href="../../Chapter2/Pandas 时间序列—period_range函数.html">
+            
+                    
+                    Pandas 时间序列—period_range函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.25" data-path="../../Chapter2/Pandas 时间序列—to_datetime函数.html">
+            
+                <a href="../../Chapter2/Pandas 时间序列—to_datetime函数.html">
+            
+                    
+                    Pandas 时间序列—to_datetime函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.26" data-path="../../Chapter2/Pandas 时间序列—to_period函数.html">
+            
+                <a href="../../Chapter2/Pandas 时间序列—to_period函数.html">
+            
+                    
+                    Pandas 时间序列—to_period函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.27" data-path="../../Chapter2/Pandas sample随机抽样.html">
+            
+                <a href="../../Chapter2/Pandas sample随机抽样.html">
+            
+                    
+                    Pandas sample随机抽样
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.28" data-path="../../Chapter2/Pandas resample方法详解.html">
+            
+                <a href="../../Chapter2/Pandas resample方法详解.html">
+            
+                    
+                    Pandas resample方法详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.29" data-path="../../Chapter2/Pandas nlargest函数.html">
+            
+                <a href="../../Chapter2/Pandas nlargest函数.html">
+            
+                    
+                    Pandas nlargest函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.30" data-path="../../Chapter2/Pandas rename和reindex.html">
+            
+                <a href="../../Chapter2/Pandas rename和reindex.html">
+            
+                    
+                    Pandas rename()和reindex()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.31" data-path="../../Chapter2/Pandas set_index和reset_index函数.html">
+            
+                <a href="../../Chapter2/Pandas set_index和reset_index函数.html">
+            
+                    
+                    Pandas set_index()和reset_index()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.32" data-path="../../Chapter2/Pandas pd.cut函数.html">
+            
+                <a href="../../Chapter2/Pandas pd.cut函数.html">
+            
+                    
+                    Pandas pd.cut()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.33" data-path="../../Chapter2/Pandas pd.Categorical函数.html">
+            
+                <a href="../../Chapter2/Pandas pd.Categorical函数.html">
+            
+                    
+                    Pandas pd.Categorical()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.34" data-path="../../Chapter2/Pandas pd.get_dummies函数.html">
+            
+                <a href="../../Chapter2/Pandas pd.get_dummies函数.html">
+            
+                    
+                    Pandas pd.get_dummies()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.35" data-path="../../Chapter2/Pandas pd.Series.to_dict函数.html">
+            
+                <a href="../../Chapter2/Pandas pd.Series.to_dict函数.html">
+            
+                    
+                    Pandas pd.Series.to_dict()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.36" data-path="../../Chapter2/Pandas Series.to_frame.html">
+            
+                <a href="../../Chapter2/Pandas Series.to_frame.html">
+            
+                    
+                    Pandas Series.to_frame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.37" data-path="../../Chapter2/Pandas 数据去重.html">
+            
+                <a href="../../Chapter2/Pandas 数据去重.html">
+            
+                    
+                    Pandas 数据去重
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.38" data-path="../../Chapter2/Pandas drop函数.html">
+            
+                <a href="../../Chapter2/Pandas drop函数.html">
+            
+                    
+                    Pandas drop函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.39" data-path="../../Chapter2/Pandas 唯一值，计数值.html">
+            
+                <a href="../../Chapter2/Pandas 唯一值，计数值.html">
+            
+                    
+                    Pandas 唯一值，计数值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.40" data-path="../../Chapter2/PDataFrame nunique.html">
+            
+                <a href="../../Chapter2/PDataFrame nunique.html">
+            
+                    
+                    DataFrame.nunique
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.41" data-path="../../Chapter2/Pandas transform函数.html">
+            
+                <a href="../../Chapter2/Pandas transform函数.html">
+            
+                    
+                    Pandas transform函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.42" data-path="../../Chapter2/Pandas value_counts函数.html">
+            
+                <a href="../../Chapter2/Pandas value_counts函数.html">
+            
+                    
+                    Pandas value_counts()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.43" data-path="../../Chapter2/Pandas sort_values函数.html">
+            
+                <a href="../../Chapter2/Pandas sort_values函数.html">
+            
+                    
+                    Pandas sort_values()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.44" data-path="../../Chapter2/聚类 Groupby.html">
+            
+                <a href="../../Chapter2/聚类 Groupby.html">
+            
+                    
+                    聚类 Groupby
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.45" data-path="../../Chapter2/DataFrame agg.html">
+            
+                <a href="../../Chapter2/DataFrame agg.html">
+            
+                    
+                    DataFrame.agg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.46" data-path="../../Chapter2/Pandas Apply函数.html">
+            
+                <a href="../../Chapter2/Pandas Apply函数.html">
+            
+                    
+                    Pandas Apply函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.47" data-path="../../Chapter2/DataFrame where.html">
+            
+                <a href="../../Chapter2/DataFrame where.html">
+            
+                    
+                    DataFrame where
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.48" data-path="../../Chapter2/Pandas map, applymap and apply的区别.html">
+            
+                <a href="../../Chapter2/Pandas map, applymap and apply的区别.html">
+            
+                    
+                    Pandas map, applymap and apply的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.49" data-path="../../Chapter2/Pandas pivot函数.html">
+            
+                <a href="../../Chapter2/Pandas pivot函数.html">
+            
+                    
+                    Pandas pivot函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.50" data-path="../../Chapter2/Pandas pivot_table函数.html">
+            
+                <a href="../../Chapter2/Pandas pivot_table函数.html">
+            
+                    
+                    Pandas pivot_table函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.51" data-path="../../Chapter2/Pandas crosstab交叉表.html">
+            
+                <a href="../../Chapter2/Pandas crosstab交叉表.html">
+            
+                    
+                    Pandas crosstab交叉表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.52" data-path="../../Chapter2/rolling滚动计算函数.html">
+            
+                <a href="../../Chapter2/rolling滚动计算函数.html">
+            
+                    
+                    rolling滚动计算函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.53" data-path="../../Chapter2/cum累积计算函数.html">
+            
+                <a href="../../Chapter2/cum累积计算函数.html">
+            
+                    
+                    cum累积计算函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.54" data-path="../../Chapter2/数据移动函数shift.html">
+            
+                <a href="../../Chapter2/数据移动函数shift.html">
+            
+                    
+                    数据移动函数shift
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.55" data-path="../../Chapter2/DataFrame add_add_prefix_suffix.html">
+            
+                <a href="../../Chapter2/DataFrame add_add_prefix_suffix.html">
+            
+                    
+                    DataFrame.add_add_prefix/suffix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.56" data-path="../../Chapter2/DataFrame select_dtypes.html">
+            
+                <a href="../../Chapter2/DataFrame select_dtypes.html">
+            
+                    
+                    DataFrame.select_dtypes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.57" data-path="../../Chapter2/DataFrame style.html">
+            
+                <a href="../../Chapter2/DataFrame style.html">
+            
+                    
+                    DataFrame.style
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.58" data-path="../../Chapter2/DataFrame divide.html">
+            
+                <a href="../../Chapter2/DataFrame divide.html">
+            
+                    
+                    DataFrame divide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Scipy
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../统计函数库/统计函数库scipy.stats.html">
+            
+                <a href="../统计函数库/统计函数库scipy.stats.html">
+            
+                    
+                    统计函数库scipy.stats
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1.1" data-path="../统计函数库/norm 函数.html">
+            
+                <a href="../统计函数库/norm 函数.html">
+            
+                    
+                    norm 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../线性代数linalg/线性代数linalg.html">
+            
+                <a href="../线性代数linalg/线性代数linalg.html">
+            
+                    
+                    线性代数linalg
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.1" data-path="../线性代数linalg/求解线性方程组linalg.solve.html">
+            
+                <a href="../线性代数linalg/求解线性方程组linalg.solve.html">
+            
+                    
+                    求解线性方程组linalg.solve
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2" data-path="../线性代数linalg/最小二乘解lstsq.html">
+            
+                <a href="../线性代数linalg/最小二乘解lstsq.html">
+            
+                    
+                    最小二乘解lstsq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.3" data-path="../线性代数linalg/矩阵的LU分解.html">
+            
+                <a href="../线性代数linalg/矩阵的LU分解.html">
+            
+                    
+                    矩阵的LU分解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.4" data-path="../线性代数linalg/矩阵的奇异值分解svd.html">
+            
+                <a href="../线性代数linalg/矩阵的奇异值分解svd.html">
+            
+                    
+                    矩阵的奇异值分解svd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.5" data-path="../线性代数linalg/求解特征值和特征向量.html">
+            
+                <a href="../线性代数linalg/求解特征值和特征向量.html">
+            
+                    
+                    求解特征值和特征向量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="优化算法optimize.html">
+            
+                <a href="优化算法optimize.html">
+            
+                    
+                    拟合与优化optimize
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.3.1" data-path="最小二乘法拟合leastsq.html">
+            
+                <a href="最小二乘法拟合leastsq.html">
+            
+                    
+                    最小二乘法函数拟合leastsq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.1.3.2" data-path="拟合optimize.curve_fit.html">
+            
+                <a href="拟合optimize.curve_fit.html">
+            
+                    
+                    拟合curve_fit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3.3" data-path="求解非线性方程组fsolve.html">
+            
+                <a href="求解非线性方程组fsolve.html">
+            
+                    
+                    求解非线性方程组fsolve
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3.4" data-path="函数最小值optimize.minimize.html">
+            
+                <a href="函数最小值optimize.minimize.html">
+            
+                    
+                    函数最小值optimize.minimize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3.5" data-path="全局最优点basinhopping.html">
+            
+                <a href="全局最优点basinhopping.html">
+            
+                    
+                    全局最优点basinhopping
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../插值interpolate/插值interpolate.html">
+            
+                <a href="../插值interpolate/插值interpolate.html">
+            
+                    
+                    插值interpolate
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.4.1" data-path="../插值interpolate/一维插值interp1d.html">
+            
+                <a href="../插值interpolate/一维插值interp1d.html">
+            
+                    
+                    一维插值interp1d
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4.2" data-path="../插值interpolate/多维插值interp2d.html">
+            
+                <a href="../插值interpolate/多维插值interp2d.html">
+            
+                    
+                    多维插值interp2d
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4.3" data-path="../插值interpolate/牛顿插值.html">
+            
+                <a href="../插值interpolate/牛顿插值.html">
+            
+                    
+                    牛顿插值
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >拟合curve_fit</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#&#x62DF;&#x5408;curvefit">&#x62DF;&#x5408;curve_fit</a></li><li><a href="#&#x57FA;&#x672C;&#x4F7F;&#x7528;">&#x57FA;&#x672C;&#x4F7F;&#x7528;</a></li><li><a href="#&#x8BA1;&#x7B97;&#x62DF;&#x5408;&#x7ED3;&#x679C;&#x7684;&#x6307;&#x6807;">&#x8BA1;&#x7B97;&#x62DF;&#x5408;&#x7ED3;&#x679C;&#x7684;&#x6307;&#x6807;</a></li><ul><li><a href="#&#x603B;&#x5E73;&#x65B9;&#x548C;-sst&#xFF1A;">&#x603B;&#x5E73;&#x65B9;&#x548C; $SST$&#xFF1A;</a></li><li><a href="#&#x56DE;&#x5F52;&#x5E73;&#x65B9;&#x548C;-ssr-">&#x56DE;&#x5F52;&#x5E73;&#x65B9;&#x548C; $SSR$ :</a></li><li><a href="#&#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x548C;-sse-">&#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x548C; $SSE$ :</a></li><li><a href="#&#x5224;&#x5B9A;&#x7CFB;&#x6570;&#xFF1A;">&#x5224;&#x5B9A;&#x7CFB;&#x6570;&#xFF1A;</a></li><li><a href="#mse-&#x5747;&#x65B9;&#x5DEE;&#x3001;&#x65B9;&#x5DEE;">$MSE$ (&#x5747;&#x65B9;&#x5DEE;&#x3001;&#x65B9;&#x5DEE;):</a></li><li><a href="#rmse&#x5747;&#x65B9;&#x6839;&#x3001;&#x6807;&#x51C6;&#x5DEE;">$RMSE$(&#x5747;&#x65B9;&#x6839;&#x3001;&#x6807;&#x51C6;&#x5DEE;):</a></li></ul><li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li></ul></div><a href="#&#x62DF;&#x5408;curvefit" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x62DF;&#x5408;curvefit"><a name="&#x62DF;&#x5408;curvefit" class="anchor-navigation-ex-anchor" href="#&#x62DF;&#x5408;curvefit"><i class="fa fa-link" aria-hidden="true"></i></a>&#x62DF;&#x5408;curve_fit</h1>
+<p><code>scipy.optimize</code> &#x4E2D;&#x6709; <code>curve_fit</code>&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x62DF;&#x5408;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x66F2;&#x7EBF;&#xFF0C;&#x5982;&#x6307;&#x6570;&#x51FD;&#x6570;&#x62DF;&#x5408;&#xFF0C;&#x5E42;&#x6307;&#x51FD;&#x6570;&#x62DF;&#x5408;&#x548C;&#x591A;&#x9879;&#x5F0F;&#x62DF;&#x5408;</p>
+<pre class="language-"><code class="lang-python">scipy<span class="token punctuation">.</span>optimize<span class="token punctuation">.</span>curve_fit<span class="token punctuation">(</span>f<span class="token punctuation">,</span> 
+                         xdata<span class="token punctuation">,</span> 
+                         ydata<span class="token punctuation">,</span> 
+                         p0<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> 
+                         sigma<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> absolute_sigma<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> 
+                         check_finite<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> bounds<span class="token operator">=</span><span class="token operator">-</span> inf<span class="token punctuation">,</span> 
+                         inf<span class="token punctuation">,</span> method<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> jac<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x53C2;&#x6570;&#xFF1A;</p>
+<ul>
+<li><code>f</code>&#x6A21;&#x578B;&#x51FD;&#x6570;f&#xFF08;x&#xFF0C;&#x2026;&#xFF09;&#x3002;&#x5B83;&#x5FC5;&#x987B;&#x5C06;&#x81EA;&#x53D8;&#x91CF;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x5C06;&#x8981;&#x62DF;&#x5408;&#x7684;&#x53C2;&#x6570;&#x4F5C;&#x4E3A;&#x5355;&#x72EC;&#x7684;&#x5269;&#x4F59;&#x53C2;&#x6570;&#x3002;</li>
+<li><code>xdata</code> : array_like or object, &#x8981;&#x62DF;&#x5408;&#x7684;&#x81EA;&#x53D8;&#x91CF;&#x6570;&#x7EC4;</li>
+<li><p><code>ydata</code> : array_like, &#x8981;&#x62DF;&#x5408;&#x7684;&#x56E0;&#x53D8;&#x91CF;&#x7684;&#x503C;</p>
+</li>
+<li><p><code>p0</code>&#xFF1A;&#x521D;&#x59CB;&#x8FED;&#x4EE3;&#x503C;</p>
+</li>
+<li><code>sigma</code>&#xFF1A;<code>y</code>&#x503C;&#x7684;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x7684;&#x5EA6;&#x91CF;</li>
+<li><code>absolute_sigma</code>&#xFF1A; If False, sigma denotes relative weights of the data points. The returned covariance matrix pcov is based on estimated errors in the data, and is not affected by the overall magnitude of the values in sigma. Only the relative magnitudes of the sigma values matter.If True, sigma describes one standard deviation errors of the input data points. The estimated covariance in pcov is based on these values.</li>
+<li><code>check_finite</code>&#xFF1A;&#x5982;&#x679C;&#x4E3A;<code>True</code>&#xFF0C;&#x5219;&#x68C0;&#x6D4B;&#x8F93;&#x5165;&#x4E2D;&#x662F;&#x5426;&#x6709;<code>nan</code>&#x6216;&#x8005;<code>inf</code></li>
+<li><code>bounds</code>&#xFF1A;&#x6307;&#x5B9A;&#x53D8;&#x91CF;&#x7684;&#x53D6;&#x503C;&#x8303;&#x56F4;</li>
+<li><code>method</code>&#xFF1A;&#x6307;&#x5B9A;&#x6C42;&#x89E3;&#x7B97;&#x6CD5;&#x3002;&#x53EF;&#x4EE5;&#x4E3A; <code>&apos;lm&apos;/&apos;trf&apos;/&apos;dogbox&apos;</code></li>
+<li><code>kwargs</code>&#xFF1A;&#x4F20;&#x9012;&#x7ED9; <code>leastsq/least_squares</code>&#x7684;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x3002;</li>
+</ul>
+<p>&#x8FD4;&#x56DE;&#x503C;&#xFF1A;</p>
+<ul>
+<li><code>popt</code>&#xFF1A;&#x6700;&#x4F18;&#x5316;&#x53C2;&#x6570;</li>
+<li><code>pcov</code>&#xFF1A;The estimated covariance of popt.</li>
+</ul>
+<h1 id="&#x57FA;&#x672C;&#x4F7F;&#x7528;"><a name="&#x57FA;&#x672C;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x672C;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x672C;&#x4F7F;&#x7528;</h1>
+<p>&#x7528;&#x6837;&#x672C;&#x62DF;&#x5408;&#x51FD;&#x6570;
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mi>a</mi><msup><mi>e</mi><mrow><mo>&#x2212;</mo><mi>b</mi><mi>x</mi></mrow></msup><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">
+f(x)=a e^{-b x}+c
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.899108em;"></span><span class="strut bottom" style="height:1.149108em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathit">a</span><span class="mord"><span class="mord mathit">e</span><span class="msupsub"><span class="vlist"><span style="top:-0.41300000000000003em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mtight">&#x2212;</span><span class="mord mathit mtight">b</span><span class="mord mathit mtight">x</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">+</span><span class="mord mathit">c</span></span></span></span></span></p>
+<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">from</span> scipy<span class="token punctuation">.</span>optimize <span class="token keyword">import</span> curve_fit
+
+<span class="token comment"># &#x5B9A;&#x4E49;&#x76EE;&#x6807;&#x51FD;&#x6570;</span>
+<span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> a<span class="token operator">*</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>b<span class="token operator">*</span>x<span class="token punctuation">)</span><span class="token operator">+</span>c
+
+<span class="token comment"># &#x8FD9;&#x90E8;&#x5206;&#x751F;&#x6210;&#x6837;&#x672C;&#x70B9;&#xFF0C;&#x5BF9;&#x51FD;&#x6570;&#x503C;&#x52A0;&#x4E0A;&#x9AD8;&#x65AF;&#x566A;&#x58F0;&#x4F5C;&#x4E3A;&#x6837;&#x672C;&#x70B9;</span>
+<span class="token comment"># [0, 4]&#x5171;50&#x4E2A;&#x70B9;</span>
+xdata <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span>
+
+<span class="token comment">#</span>
+<span class="token comment"># a=2.5, b=1.3, c=0.5</span>
+y <span class="token operator">=</span> func<span class="token punctuation">(</span>xdata<span class="token punctuation">,</span> <span class="token number">2.5</span><span class="token punctuation">,</span> <span class="token number">1.3</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span>
+
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+err_stdev <span class="token operator">=</span> <span class="token number">0.2</span>
+<span class="token comment"># &#x751F;&#x6210;&#x5747;&#x503C;&#x4E3A;0&#xFF0C;&#x6807;&#x51C6;&#x5DEE;&#x4E3A;err_stdev&#x4E3A;0.2&#x7684;&#x9AD8;&#x65AF;&#x566A;&#x58F0;</span>
+y_noise <span class="token operator">=</span> err_stdev<span class="token operator">*</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token builtin">len</span><span class="token punctuation">(</span>xdata<span class="token punctuation">)</span><span class="token punctuation">)</span>
+ydata <span class="token operator">=</span> y <span class="token operator">+</span> y_noise
+plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>xdata<span class="token punctuation">,</span> ydata<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">&apos;data&apos;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># &#x5229;&#x7528;curve_fit&#x4F5C;&#x7B80;&#x5355;&#x7684;&#x62DF;&#x5408;&#xFF0C;popt&#x4E3A;&#x62DF;&#x5408;&#x5F97;&#x5230;&#x7684;&#x53C2;&#x6570;,pcov&#x662F;&#x53C2;&#x6570;&#x7684;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;</span>
+popt_1<span class="token punctuation">,</span> pcov <span class="token operator">=</span> curve_fit<span class="token punctuation">(</span>func<span class="token punctuation">,</span> xdata<span class="token punctuation">,</span> ydata<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>popt_1<span class="token punctuation">)</span> <span class="token comment">#[2.52560138 1.44826091 0.53725085]</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>xdata<span class="token punctuation">,</span> func<span class="token punctuation">(</span>xdata<span class="token punctuation">,</span> <span class="token operator">*</span>popt_1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&apos;r-&apos;</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">&apos;fit_1&apos;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># &#x9650;&#x5B9A;&#x53C2;&#x6570;&#x8303;&#x56F4;&#xFF1A;0&lt;=a&lt;=3, 0&lt;=b&lt;=1, 0&lt;=c&lt;=0.5</span>
+popt_2<span class="token punctuation">,</span> pcov <span class="token operator">=</span> curve_fit<span class="token punctuation">(</span>func<span class="token punctuation">,</span> xdata<span class="token punctuation">,</span> ydata<span class="token punctuation">,</span> bounds<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>popt_2<span class="token punctuation">)</span> <span class="token comment"># [2.37032282 1.         0.39448271]</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>xdata<span class="token punctuation">,</span> func<span class="token punctuation">(</span>xdata<span class="token punctuation">,</span> <span class="token operator">*</span>popt_2<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&apos;g--&apos;</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">&apos;fit_2&apos;</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200704212642.png" data-lightbox="f1db7b03-883b-43f0-a493-032bfeb117c5" data-title="curve_fit" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200704212642.png" alt="curve_fit"></a></center>
+
+<h1 id="&#x8BA1;&#x7B97;&#x62DF;&#x5408;&#x7ED3;&#x679C;&#x7684;&#x6307;&#x6807;"><a name="&#x8BA1;&#x7B97;&#x62DF;&#x5408;&#x7ED3;&#x679C;&#x7684;&#x6307;&#x6807;" class="anchor-navigation-ex-anchor" href="#&#x8BA1;&#x7B97;&#x62DF;&#x5408;&#x7ED3;&#x679C;&#x7684;&#x6307;&#x6807;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BA1;&#x7B97;&#x62DF;&#x5408;&#x7ED3;&#x679C;&#x7684;&#x6307;&#x6807;</h1>
+<h2 id="&#x603B;&#x5E73;&#x65B9;&#x548C;-sst&#xFF1A;"><a name="&#x603B;&#x5E73;&#x65B9;&#x548C;-sst&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x603B;&#x5E73;&#x65B9;&#x548C;-sst&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x603B;&#x5E73;&#x65B9;&#x548C; $SST$&#xFF1A;</h2>
+<p>&#x603B;&#x5E73;&#x65B9;&#x548C;(SST) = &#x56DE;&#x5F52;&#x5E73;&#x65B9;&#x548C;(SSR)&#x5341;&#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x548C;(SSE)</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">T</mi></mrow><mo>=</mo><mo>&#x2211;</mo><msup><mrow><mo fence="true">(</mo><msub><mi>y</mi><mrow><mi>i</mi></mrow></msub><mo>&#x2212;</mo><mover accent="true"><mrow><mi>y</mi></mrow><mo>&#xAF;</mo></mover><mo fence="true">)</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">
+\mathrm{SST}=\sum\left(y_{i}-\bar{y}\right)^{2}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.05em;"></span><span class="strut bottom" style="height:1.6000100000000002em;vertical-align:-0.55001em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord displaystyle textstyle uncramped"><span class="mord mathrm">S</span><span class="mord mathrm">S</span><span class="mord mathrm">T</span></span><span class="mrel">=</span><span class="mop op-symbol large-op" style="top:-0.000004999999999977245em;">&#x2211;</span><span class="minner"><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle cramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span><span style="top:0em;margin-left:0.11112em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="accent-body"><span>&#xAF;</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;">)</span></span><span class="msupsub"><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></p>
+<h2 id="&#x56DE;&#x5F52;&#x5E73;&#x65B9;&#x548C;-ssr-"><a name="&#x56DE;&#x5F52;&#x5E73;&#x65B9;&#x548C;-ssr-" class="anchor-navigation-ex-anchor" href="#&#x56DE;&#x5F52;&#x5E73;&#x65B9;&#x548C;-ssr-"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DE;&#x5F52;&#x5E73;&#x65B9;&#x548C; $SSR$ :</h2>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>S</mi><mi>R</mi><mo>=</mo><mo>&#x2211;</mo><msup><mrow><mo fence="true">(</mo><msub><mover accent="true"><mrow><mi>y</mi></mrow><mo>^</mo></mover><mrow><mi>i</mi></mrow></msub><mo>&#x2212;</mo><mover accent="true"><mrow><mi>y</mi></mrow><mo>&#xAF;</mo></mover><mo fence="true">)</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">
+SSR=\sum\left(\hat{y}_{i}-\bar{y}\right)^{2}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.05em;"></span><span class="strut bottom" style="height:1.6000100000000002em;vertical-align:-0.55001em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit" style="margin-right:0.00773em;">R</span><span class="mrel">=</span><span class="mop op-symbol large-op" style="top:-0.000004999999999977245em;">&#x2211;</span><span class="minner"><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;">(</span><span class="mord"><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle cramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span><span style="top:0em;margin-left:0.11112em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="accent-body"><span>^</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle cramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span><span style="top:0em;margin-left:0.11112em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="accent-body"><span>&#xAF;</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;">)</span></span><span class="msupsub"><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></p>
+<h2 id="&#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x548C;-sse-"><a name="&#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x548C;-sse-" class="anchor-navigation-ex-anchor" href="#&#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x548C;-sse-"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x548C; $SSE$ :</h2>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>S</mi><mi>E</mi><mo>=</mo><mo>&#x2211;</mo><mrow><mo fence="true">(</mo><msub><mi>y</mi><mrow><mi>i</mi></mrow></msub><mo>&#x2212;</mo><msub><mover accent="true"><mrow><mi>y</mi></mrow><mo>^</mo></mover><mrow><mi>i</mi></mrow></msub><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+SSE=\sum\left(y_{i}-\hat{y}_{i}\right)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.05em;"></span><span class="strut bottom" style="height:1.6000100000000002em;vertical-align:-0.55001em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mrel">=</span><span class="mop op-symbol large-op" style="top:-0.000004999999999977245em;">&#x2211;</span><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mord"><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle cramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span><span style="top:0em;margin-left:0.11112em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="accent-body"><span>^</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;">)</span></span></span></span></span></span></p>
+<h2 id="&#x5224;&#x5B9A;&#x7CFB;&#x6570;&#xFF1A;"><a name="&#x5224;&#x5B9A;&#x7CFB;&#x6570;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x5224;&#x5B9A;&#x7CFB;&#x6570;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5224;&#x5B9A;&#x7CFB;&#x6570;&#xFF1A;</h2>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200704214521.png" data-lightbox="3d5509e9-a073-4136-834f-4b70ce2e8acd" data-title="image-20200704214438552" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200704214521.png" alt="image-20200704214438552"></a></center>
+
+
+
+
+
+
+<h2 id="mse-&#x5747;&#x65B9;&#x5DEE;&#x3001;&#x65B9;&#x5DEE;"><a name="mse-&#x5747;&#x65B9;&#x5DEE;&#x3001;&#x65B9;&#x5DEE;" class="anchor-navigation-ex-anchor" href="#mse-&#x5747;&#x65B9;&#x5DEE;&#x3001;&#x65B9;&#x5DEE;"><i class="fa fa-link" aria-hidden="true"></i></a>$MSE$ (&#x5747;&#x65B9;&#x5DEE;&#x3001;&#x65B9;&#x5DEE;):</h2>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mi>S</mi><mi>E</mi><mo>=</mo><mi>S</mi><mi>S</mi><mi>E</mi><mi mathvariant="normal">/</mi><mi>n</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><msubsup><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></msubsup><msup><mrow><mo fence="true">(</mo><msub><mi>y</mi><mrow><mi>i</mi></mrow></msub><mo>&#x2212;</mo><msub><mover accent="true"><mrow><mi>y</mi></mrow><mo>^</mo></mover><mrow><mi>i</mi></mrow></msub><mo fence="true">)</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">
+M S E=S S E / n=\frac{1}{n} \sum_{i=1}^{n} \left(y_{i}-\hat{y}_{i}\right)^{2}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.6513970000000002em;"></span><span class="strut bottom" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mord mathrm">/</span><span class="mord mathit">n</span><span class="mrel">=</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit">n</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mop op-limits"><span class="vlist"><span style="top:1.1776689999999999em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mrel mtight">=</span><span class="mord mathrm mtight">1</span></span></span></span><span style="top:-0.000005000000000143778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span><span class="mop op-symbol large-op">&#x2211;</span></span></span><span style="top:-1.2500050000000003em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="minner"><span class="minner displaystyle textstyle uncramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mord"><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle cramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span><span style="top:0em;margin-left:0.11112em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="accent-body"><span>^</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;">)</span></span><span class="msupsub"><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></p>
+<h2 id="rmse&#x5747;&#x65B9;&#x6839;&#x3001;&#x6807;&#x51C6;&#x5DEE;"><a name="rmse&#x5747;&#x65B9;&#x6839;&#x3001;&#x6807;&#x51C6;&#x5DEE;" class="anchor-navigation-ex-anchor" href="#rmse&#x5747;&#x65B9;&#x6839;&#x3001;&#x6807;&#x51C6;&#x5DEE;"><i class="fa fa-link" aria-hidden="true"></i></a>$RMSE$(&#x5747;&#x65B9;&#x6839;&#x3001;&#x6807;&#x51C6;&#x5DEE;):</h2>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mi>M</mi><mi>S</mi><mi>E</mi><mo>=</mo><msqrt><mrow><mi>M</mi><mi>S</mi><mi>E</mi></mrow></msqrt><mo>=</mo><msqrt><mrow><mi>S</mi><mi>S</mi><mi>E</mi><mi mathvariant="normal">/</mi><mi>n</mi></mrow></msqrt><mo>=</mo><msqrt><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><msubsup><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></msubsup><msup><mrow><mo fence="true">(</mo><msub><mi>y</mi><mrow><mi>i</mi></mrow></msub><mo>&#x2212;</mo><msub><mover accent="true"><mrow><mi>y</mi></mrow><mo>^</mo></mover><mrow><mi>i</mi></mrow></msub><mo fence="true">)</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">
+R M S E=\sqrt{M S E}=\sqrt{S S E / n}=\sqrt{\frac{1}{n} \sum_{i=1}^{n} \left(y_{i}-\hat{y}_{i}\right)^{2}}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:2.128249em;"></span><span class="strut bottom" style="height:3.6550199999999995em;vertical-align:-1.5267709999999999em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.00773em;">R</span><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mrel">=</span><span class="mord sqrt"><span class="sqrt-sign" style="top:-0.13554em;"><span class="style-wrap reset-textstyle textstyle uncramped">&#x221A;</span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle cramped"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit" style="margin-right:0.05764em;">E</span></span></span><span style="top:-0.89554em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">=</span><span class="mord sqrt"><span class="sqrt-sign" style="top:-0.09388000000000007em;"><span class="style-wrap reset-textstyle textstyle uncramped"><span class="delimsizing size1">&#x221A;</span></span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle cramped"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mord mathrm">/</span><span class="mord mathit">n</span></span></span><span style="top:-0.90388em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">=</span><span class="mord sqrt"><span class="sqrt-sign" style="top:-0.023254000000000108em;"><span class="style-wrap reset-textstyle textstyle uncramped"><span class="delimsizing mult"><span class="vlist"><span style="top:0.665005em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#x23B7;</span></span></span><span style="top:-0.24999499999999997em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#xE000;</span></span></span><span style="top:-0.854995em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#xE000;</span></span></span><span style="top:-1.459995em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="delimsizinginner delim-size4"><span>&#xE001;</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="mord displaystyle textstyle cramped"><span class="mord reset-textstyle displaystyle textstyle cramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit">n</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mop op-limits"><span class="vlist"><span style="top:1.1776689999999999em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mrel mtight">=</span><span class="mord mathrm mtight">1</span></span></span></span><span style="top:-0.000005000000000143778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span><span class="mop op-symbol large-op">&#x2211;</span></span></span><span style="top:-1.2500050000000003em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="minner"><span class="minner displaystyle textstyle cramped"><span class="mopen style-wrap reset-textstyle textstyle uncramped" style="top:0em;">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mord"><span class="mord accent"><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="mord displaystyle textstyle cramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span><span style="top:0em;margin-left:0.11112em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="accent-body"><span>^</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose style-wrap reset-textstyle textstyle uncramped" style="top:0em;">)</span></span><span class="msupsub"><span class="vlist"><span style="top:-0.364em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span><span style="top:-2.0482489999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></p>
+<pre class="language-"><code class="lang-python"><span class="token keyword">def</span> <span class="token function">get_indexes</span><span class="token punctuation">(</span>y_predict<span class="token punctuation">,</span> y_data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    n <span class="token operator">=</span> y_data<span class="token punctuation">.</span>size
+
+    <span class="token comment">#&#x8BA1;&#x7B97; &#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x65B9;&#x5DEE; SSE</span>
+    SSE <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>y_data <span class="token operator">-</span> y_predict<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># &#x5747;&#x65B9;&#x5DEE; MSE</span>
+    MSE <span class="token operator">=</span> SSE <span class="token operator">/</span> n
+
+    <span class="token comment"># &#x5747;&#x65B9;&#x6839; RMSE &#x8D8A;&#x63A5;&#x8FD1; 0&#xFF0C;&#x62DF;&#x5408;&#x6548;&#x679C;&#x8D8A;&#x597D;</span>
+    RMSE <span class="token operator">=</span> np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>MSE<span class="token punctuation">)</span>
+
+    <span class="token comment"># &#x6C42;R&#x65B9;&#xFF0C;0&lt;=R&lt;=1&#xFF0C;&#x8D8A;&#x9760;&#x8FD1;1,&#x62DF;&#x5408;&#x6548;&#x679C;&#x8D8A;&#x597D;</span>
+    u <span class="token operator">=</span> y_data<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    SST <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>y_data <span class="token operator">-</span> u<span class="token punctuation">)</span><span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    SSR <span class="token operator">=</span> SST <span class="token operator">-</span> SSE
+    R_square <span class="token operator">=</span> SSR <span class="token operator">/</span> SST
+
+    <span class="token keyword">return</span> SSE<span class="token punctuation">,</span> MSE<span class="token punctuation">,</span> RMSE<span class="token punctuation">,</span> R_square
+</code></pre>
+<p>&#x6BD4;&#x8F83;&#x4E0A;&#x4E00;&#x8282;&#x7684;&#x4E24;&#x6B21;&#x62DF;&#x5408;&#xFF0C;&#x54EA;&#x4E2A;&#x62DF;&#x5408;&#x5F97;&#x66F4;&#x597D;</p>
+<pre class="language-"><code class="lang-python"><span class="token comment"># &#x6BD4;&#x8F83;&#x4E0A;&#x4E00;&#x8282;&#x7684;&#x4E24;&#x6B21;&#x62DF;&#x5408;&#xFF0C;&#x54EA;&#x4E2A;&#x62DF;&#x5408;&#x5F97;&#x66F4;&#x597D;</span>
+y_predict_1<span class="token operator">=</span>func<span class="token punctuation">(</span>xdata<span class="token punctuation">,</span> <span class="token operator">*</span>popt_1<span class="token punctuation">)</span>
+indexes_1<span class="token operator">=</span>get_indexes<span class="token punctuation">(</span>y_predict_1<span class="token punctuation">,</span> ydata<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>indexes_1<span class="token punctuation">)</span>
+
+
+<span class="token comment"># &#x6A21;&#x578B;2</span>
+y_predict_2<span class="token operator">=</span>func<span class="token punctuation">(</span>xdata<span class="token punctuation">,</span> <span class="token operator">*</span>popt_2<span class="token punctuation">)</span>
+indexes_2<span class="token operator">=</span>get_indexes<span class="token punctuation">(</span>y_predict_2<span class="token punctuation">,</span> ydata<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>indexes_2<span class="token punctuation">)</span>
+</code></pre>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre class="language-"><code>(1.833619516810147, 0.03667239033620294, 0.19150036641271195, 0.9163487663138368)
+(2.306216123348346, 0.04612432246696692, 0.21476573857803047, 0.8947885195939563)
+</code></pre><h1 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;</h1>
+<ul>
+<li><a href="https://blog.csdn.net/jason_cuijiahui/article/details/87211889" target="_blank">&#x5229;&#x7528;scipy.optimize.curve_fit&#x5BF9;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x62DF;&#x5408;</a> </li>
+<li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html" target="_blank">scipy.optimize.curve_fit</a> </li>
+<li><a href="" target="_blank"></a> </li>
+</ul>
+<footer class="page-footer"><span class="copyright">  </span><span class="footer-modification">Update time&#xFF1A;
+2020-08-04 
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="最小二乘法拟合leastsq.html" class="navigation navigation-prev " aria-label="Previous page: 最小二乘法函数拟合leastsq">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="求解非线性方程组fsolve.html" class="navigation navigation-next " aria-label="Next page: 求解非线性方程组fsolve">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"拟合curve_fit","level":"4.1.3.2","depth":3,"next":{"title":"求解非线性方程组fsolve","level":"4.1.3.3","depth":3,"path":"Chapter3/拟合与优化optimize/求解非线性方程组fsolve.md","ref":"Chapter3/拟合与优化optimize/求解非线性方程组fsolve.md","articles":[]},"previous":{"title":"最小二乘法函数拟合leastsq","level":"4.1.3.1","depth":3,"path":"Chapter3/拟合与优化optimize/最小二乘法拟合leastsq.md","ref":"Chapter3/拟合与优化optimize/最小二乘法拟合leastsq.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","expandable-chapters","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","advanced-emoji","lightbox","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD "},"prism":{"css":["prism-themes/themes/prism-vs.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"prism-themes":{},"custom-favicon":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HHG","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python 学习记录","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"。"},"file":{"path":"Chapter3/拟合与优化optimize/拟合optimize.curve_fit.md","mtime":"2020-08-04T12:59:26.072Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-20T02:51:28.455Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

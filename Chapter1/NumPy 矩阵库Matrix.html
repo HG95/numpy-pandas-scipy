@@ -1,0 +1,1990 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>NumPy 矩阵库(Matrix) · python 学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="HHG">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-vs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="NumPy 线性代数中的运算.html" />
+    
+    
+    <link rel="prev" href="Numpy 上三角矩阵triu和下三角矩阵tril.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Numpy
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="Numpy 创建数组.html">
+            
+                <a href="Numpy 创建数组.html">
+            
+                    
+                    Numpy 创建数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="Numpy 数组遍历.html">
+            
+                <a href="Numpy 数组遍历.html">
+            
+                    
+                    Numpy 数组遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="Numpy 数组操作.html">
+            
+                <a href="Numpy 数组操作.html">
+            
+                    
+                    Numpy 数组操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="axis=0 axis=1的理解.html">
+            
+                <a href="axis=0 axis=1的理解.html">
+            
+                    
+                    axis=0 axis=1的理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="NumPy 排序、条件刷选函数.html">
+            
+                <a href="NumPy 排序、条件刷选函数.html">
+            
+                    
+                    NumPy 排序、条件刷选函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="常用统计函数.html">
+            
+                <a href="常用统计函数.html">
+            
+                    
+                    常用统计函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="NumPy 常用函数.html">
+            
+                <a href="NumPy 常用函数.html">
+            
+                    
+                    NumPy 常用函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="NumPy 协方差cov与相关系数corrcoef的使用.html">
+            
+                <a href="NumPy 协方差cov与相关系数corrcoef的使用.html">
+            
+                    
+                    NumPy 协方差cov与相关系数corrcoef的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="numpy.set_printoptions.html">
+            
+                <a href="numpy.set_printoptions.html">
+            
+                    
+                    numpy.set_printoptions()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="numpy.datetime64日期函数.html">
+            
+                <a href="numpy.datetime64日期函数.html">
+            
+                    
+                    numpy.datetime64()日期函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="numpy.split函数.html">
+            
+                <a href="numpy.split函数.html">
+            
+                    
+                    numpy.split()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="Numpy np.count_nonzero.html">
+            
+                <a href="Numpy np.count_nonzero.html">
+            
+                    
+                    Numpy np.count_nonzero
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="Numpy np.zeros_like函数.html">
+            
+                <a href="Numpy np.zeros_like函数.html">
+            
+                    
+                    Numpy np.zeros_like()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.14" data-path="Numpy 上三角矩阵triu和下三角矩阵tril.html">
+            
+                <a href="Numpy 上三角矩阵triu和下三角矩阵tril.html">
+            
+                    
+                    Numpy 上三角矩阵triu和下三角矩阵tril
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.15" data-path="NumPy 矩阵库Matrix.html">
+            
+                <a href="NumPy 矩阵库Matrix.html">
+            
+                    
+                    NumPy 矩阵库(Matrix)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16" data-path="NumPy 线性代数中的运算.html">
+            
+                <a href="NumPy 线性代数中的运算.html">
+            
+                    
+                    NumPy 线性代数中的运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.17" data-path="NumPy 降维和增维.html">
+            
+                <a href="NumPy 降维和增维.html">
+            
+                    
+                    NumPy 降维和增维
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.18" data-path="Numpy中reshape函数.html">
+            
+                <a href="Numpy中reshape函数.html">
+            
+                    
+                    Numpy中reshape函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.19" data-path="Numpy squeeze函数.html">
+            
+                <a href="Numpy squeeze函数.html">
+            
+                    
+                    Numpy squeeze()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.20" data-path="Numpy random随机函数.html">
+            
+                <a href="Numpy random随机函数.html">
+            
+                    
+                    Numpy random函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.21" data-path="Numpy 字符串操作.html">
+            
+                <a href="Numpy 字符串操作.html">
+            
+                    
+                    Numpy 字符串操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22" data-path="Numpy mgrid和meshgrid的区别和使用.html">
+            
+                <a href="Numpy mgrid和meshgrid的区别和使用.html">
+            
+                    
+                    Numpy mgrid()和meshgrid()的区别和使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.23" data-path="Numpy 数组填充np.pad函数.html">
+            
+                <a href="Numpy 数组填充np.pad函数.html">
+            
+                    
+                    Numpy 数组填充np.pad()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.24" data-path="Numpy 数学函数.html">
+            
+                <a href="Numpy 数学函数.html">
+            
+                    
+                    Numpy 数学函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.25" data-path="numpy nan_to_num数.html">
+            
+                <a href="numpy nan_to_num数.html">
+            
+                    
+                    numpy.nan_to_num
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../Chapter2/">
+            
+                <a href="../Chapter2/">
+            
+                    
+                    Pandas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../Chapter2/Series cat.html">
+            
+                <a href="../Chapter2/Series cat.html">
+            
+                    
+                    Series.cat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../Chapter2/Pandas melt.html">
+            
+                <a href="../Chapter2/Pandas melt.html">
+            
+                    
+                    Pandas.melt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../Chapter2/Pandas set_option.html">
+            
+                <a href="../Chapter2/Pandas set_option.html">
+            
+                    
+                    Pandas set_option
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../Chapter2/Pandas 数据结构Series,DataFrame.html">
+            
+                <a href="../Chapter2/Pandas 数据结构Series,DataFrame.html">
+            
+                    
+                    Pandas 数据结构Series,DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../Chapter2/Pandas 数据获取与查询.html">
+            
+                <a href="../Chapter2/Pandas 数据获取与查询.html">
+            
+                    
+                    Pandas 数据获取与查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../Chapter2/Pandas isin索引和~反向索引.html">
+            
+                <a href="../Chapter2/Pandas isin索引和~反向索引.html">
+            
+                    
+                    Pandas isin索引和~反向索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../Chapter2/Pandas ix 、loc 、 iloc区别.html">
+            
+                <a href="../Chapter2/Pandas ix 、loc 、 iloc区别.html">
+            
+                    
+                    Pandas ix 、loc 、 iloc区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../Chapter2/Pandas 数据对齐输出.html">
+            
+                <a href="../Chapter2/Pandas 数据对齐输出.html">
+            
+                    
+                    Pandas 数据对齐输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.9" data-path="../Chapter2/Pandas Index对象.html">
+            
+                <a href="../Chapter2/Pandas Index对象.html">
+            
+                    
+                    Pandas Index对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.10" data-path="../Chapter2/Pandas MultiIndex对象.html">
+            
+                <a href="../Chapter2/Pandas MultiIndex对象.html">
+            
+                    
+                    Pandas MultiIndex对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.11" data-path="../Chapter2/Pandas 根据条件获取元素所在的位置（索引）.html">
+            
+                <a href="../Chapter2/Pandas 根据条件获取元素所在的位置（索引）.html">
+            
+                    
+                    Pandas 根据条件获取元素所在的位置（索引）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.12" data-path="../Chapter2/Pandas 数据合并与重塑.html">
+            
+                <a href="../Chapter2/Pandas 数据合并与重塑.html">
+            
+                    
+                    Pandas 数据合并与重塑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.13" data-path="../Chapter2/Pandas 轴旋转stack和unstack.html">
+            
+                <a href="../Chapter2/Pandas 轴旋转stack和unstack.html">
+            
+                    
+                    Pandas 轴旋转stack和unstack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.14" data-path="../Chapter2/Pandas 缺失值处理.html">
+            
+                <a href="../Chapter2/Pandas 缺失值处理.html">
+            
+                    
+                    Pandas 缺失值处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.15" data-path="../Chapter2/Pandas 数据排序.html">
+            
+                <a href="../Chapter2/Pandas 数据排序.html">
+            
+                    
+                    Pandas 数据排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.16" data-path="../Chapter2/Pandas 描述和汇总统计.html">
+            
+                <a href="../Chapter2/Pandas 描述和汇总统计.html">
+            
+                    
+                    Pandas 描述和汇总统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.17" data-path="../Chapter2/Pandas 众数mode.html">
+            
+                <a href="../Chapter2/Pandas 众数mode.html">
+            
+                    
+                    Pandas 众数mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.18" data-path="../Chapter2/Pandas 分位数quantile.html">
+            
+                <a href="../Chapter2/Pandas 分位数quantile.html">
+            
+                    
+                    Pandas 分位数quantile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.19" data-path="../Chapter2/Pandas 统计函数corr.html">
+            
+                <a href="../Chapter2/Pandas 统计函数corr.html">
+            
+                    
+                    Pandas 统计函数corr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.20" data-path="../Chapter2/Pandas 统计函数scatter_matrix.html">
+            
+                <a href="../Chapter2/Pandas 统计函数scatter_matrix.html">
+            
+                    
+                    Pandas 统计函数scatter_matrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.21" data-path="../Chapter2/Pandas 使用测试模块制作伪数据.html">
+            
+                <a href="../Chapter2/Pandas 使用测试模块制作伪数据.html">
+            
+                    
+                    Pandas 使用测试模块制作伪数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.22" data-path="../Chapter2/Pandas 字符数据的处理方法.html">
+            
+                <a href="../Chapter2/Pandas 字符数据的处理方法.html">
+            
+                    
+                    Pandas 字符数据的处理方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.23" data-path="../Chapter2/Pandas 时间序列—date_range函数.html">
+            
+                <a href="../Chapter2/Pandas 时间序列—date_range函数.html">
+            
+                    
+                    Pandas 时间序列—date_range函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.24" data-path="../Chapter2/Pandas 时间序列—period_range函数.html">
+            
+                <a href="../Chapter2/Pandas 时间序列—period_range函数.html">
+            
+                    
+                    Pandas 时间序列—period_range函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.25" data-path="../Chapter2/Pandas 时间序列—to_datetime函数.html">
+            
+                <a href="../Chapter2/Pandas 时间序列—to_datetime函数.html">
+            
+                    
+                    Pandas 时间序列—to_datetime函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.26" data-path="../Chapter2/Pandas 时间序列—to_period函数.html">
+            
+                <a href="../Chapter2/Pandas 时间序列—to_period函数.html">
+            
+                    
+                    Pandas 时间序列—to_period函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.27" data-path="../Chapter2/Pandas sample随机抽样.html">
+            
+                <a href="../Chapter2/Pandas sample随机抽样.html">
+            
+                    
+                    Pandas sample随机抽样
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.28" data-path="../Chapter2/Pandas resample方法详解.html">
+            
+                <a href="../Chapter2/Pandas resample方法详解.html">
+            
+                    
+                    Pandas resample方法详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.29" data-path="../Chapter2/Pandas nlargest函数.html">
+            
+                <a href="../Chapter2/Pandas nlargest函数.html">
+            
+                    
+                    Pandas nlargest函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.30" data-path="../Chapter2/Pandas rename和reindex.html">
+            
+                <a href="../Chapter2/Pandas rename和reindex.html">
+            
+                    
+                    Pandas rename()和reindex()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.31" data-path="../Chapter2/Pandas set_index和reset_index函数.html">
+            
+                <a href="../Chapter2/Pandas set_index和reset_index函数.html">
+            
+                    
+                    Pandas set_index()和reset_index()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.32" data-path="../Chapter2/Pandas pd.cut函数.html">
+            
+                <a href="../Chapter2/Pandas pd.cut函数.html">
+            
+                    
+                    Pandas pd.cut()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.33" data-path="../Chapter2/Pandas pd.Categorical函数.html">
+            
+                <a href="../Chapter2/Pandas pd.Categorical函数.html">
+            
+                    
+                    Pandas pd.Categorical()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.34" data-path="../Chapter2/Pandas pd.get_dummies函数.html">
+            
+                <a href="../Chapter2/Pandas pd.get_dummies函数.html">
+            
+                    
+                    Pandas pd.get_dummies()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.35" data-path="../Chapter2/Pandas pd.Series.to_dict函数.html">
+            
+                <a href="../Chapter2/Pandas pd.Series.to_dict函数.html">
+            
+                    
+                    Pandas pd.Series.to_dict()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.36" data-path="../Chapter2/Pandas Series.to_frame.html">
+            
+                <a href="../Chapter2/Pandas Series.to_frame.html">
+            
+                    
+                    Pandas Series.to_frame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.37" data-path="../Chapter2/Pandas 数据去重.html">
+            
+                <a href="../Chapter2/Pandas 数据去重.html">
+            
+                    
+                    Pandas 数据去重
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.38" data-path="../Chapter2/Pandas drop函数.html">
+            
+                <a href="../Chapter2/Pandas drop函数.html">
+            
+                    
+                    Pandas drop函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.39" data-path="../Chapter2/Pandas 唯一值，计数值.html">
+            
+                <a href="../Chapter2/Pandas 唯一值，计数值.html">
+            
+                    
+                    Pandas 唯一值，计数值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.40" data-path="../Chapter2/PDataFrame nunique.html">
+            
+                <a href="../Chapter2/PDataFrame nunique.html">
+            
+                    
+                    DataFrame.nunique
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.41" data-path="../Chapter2/Pandas transform函数.html">
+            
+                <a href="../Chapter2/Pandas transform函数.html">
+            
+                    
+                    Pandas transform函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.42" data-path="../Chapter2/Pandas value_counts函数.html">
+            
+                <a href="../Chapter2/Pandas value_counts函数.html">
+            
+                    
+                    Pandas value_counts()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.43" data-path="../Chapter2/Pandas sort_values函数.html">
+            
+                <a href="../Chapter2/Pandas sort_values函数.html">
+            
+                    
+                    Pandas sort_values()函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.44" data-path="../Chapter2/聚类 Groupby.html">
+            
+                <a href="../Chapter2/聚类 Groupby.html">
+            
+                    
+                    聚类 Groupby
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.45" data-path="../Chapter2/DataFrame agg.html">
+            
+                <a href="../Chapter2/DataFrame agg.html">
+            
+                    
+                    DataFrame.agg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.46" data-path="../Chapter2/Pandas Apply函数.html">
+            
+                <a href="../Chapter2/Pandas Apply函数.html">
+            
+                    
+                    Pandas Apply函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.47" data-path="../Chapter2/DataFrame where.html">
+            
+                <a href="../Chapter2/DataFrame where.html">
+            
+                    
+                    DataFrame where
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.48" data-path="../Chapter2/Pandas map, applymap and apply的区别.html">
+            
+                <a href="../Chapter2/Pandas map, applymap and apply的区别.html">
+            
+                    
+                    Pandas map, applymap and apply的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.49" data-path="../Chapter2/Pandas pivot函数.html">
+            
+                <a href="../Chapter2/Pandas pivot函数.html">
+            
+                    
+                    Pandas pivot函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.50" data-path="../Chapter2/Pandas pivot_table函数.html">
+            
+                <a href="../Chapter2/Pandas pivot_table函数.html">
+            
+                    
+                    Pandas pivot_table函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.51" data-path="../Chapter2/Pandas crosstab交叉表.html">
+            
+                <a href="../Chapter2/Pandas crosstab交叉表.html">
+            
+                    
+                    Pandas crosstab交叉表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.52" data-path="../Chapter2/rolling滚动计算函数.html">
+            
+                <a href="../Chapter2/rolling滚动计算函数.html">
+            
+                    
+                    rolling滚动计算函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.53" data-path="../Chapter2/cum累积计算函数.html">
+            
+                <a href="../Chapter2/cum累积计算函数.html">
+            
+                    
+                    cum累积计算函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.54" data-path="../Chapter2/数据移动函数shift.html">
+            
+                <a href="../Chapter2/数据移动函数shift.html">
+            
+                    
+                    数据移动函数shift
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.55" data-path="../Chapter2/DataFrame add_add_prefix_suffix.html">
+            
+                <a href="../Chapter2/DataFrame add_add_prefix_suffix.html">
+            
+                    
+                    DataFrame.add_add_prefix/suffix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.56" data-path="../Chapter2/DataFrame select_dtypes.html">
+            
+                <a href="../Chapter2/DataFrame select_dtypes.html">
+            
+                    
+                    DataFrame.select_dtypes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.57" data-path="../Chapter2/DataFrame style.html">
+            
+                <a href="../Chapter2/DataFrame style.html">
+            
+                    
+                    DataFrame.style
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.58" data-path="../Chapter2/DataFrame divide.html">
+            
+                <a href="../Chapter2/DataFrame divide.html">
+            
+                    
+                    DataFrame divide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Chapter3/">
+            
+                <a href="../Chapter3/">
+            
+                    
+                    Scipy
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../Chapter3/统计函数库/统计函数库scipy.stats.html">
+            
+                <a href="../Chapter3/统计函数库/统计函数库scipy.stats.html">
+            
+                    
+                    统计函数库scipy.stats
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1.1" data-path="../Chapter3/统计函数库/norm 函数.html">
+            
+                <a href="../Chapter3/统计函数库/norm 函数.html">
+            
+                    
+                    norm 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../Chapter3/线性代数linalg/线性代数linalg.html">
+            
+                <a href="../Chapter3/线性代数linalg/线性代数linalg.html">
+            
+                    
+                    线性代数linalg
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.1" data-path="../Chapter3/线性代数linalg/求解线性方程组linalg.solve.html">
+            
+                <a href="../Chapter3/线性代数linalg/求解线性方程组linalg.solve.html">
+            
+                    
+                    求解线性方程组linalg.solve
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2" data-path="../Chapter3/线性代数linalg/最小二乘解lstsq.html">
+            
+                <a href="../Chapter3/线性代数linalg/最小二乘解lstsq.html">
+            
+                    
+                    最小二乘解lstsq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.3" data-path="../Chapter3/线性代数linalg/矩阵的LU分解.html">
+            
+                <a href="../Chapter3/线性代数linalg/矩阵的LU分解.html">
+            
+                    
+                    矩阵的LU分解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.4" data-path="../Chapter3/线性代数linalg/矩阵的奇异值分解svd.html">
+            
+                <a href="../Chapter3/线性代数linalg/矩阵的奇异值分解svd.html">
+            
+                    
+                    矩阵的奇异值分解svd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.5" data-path="../Chapter3/线性代数linalg/求解特征值和特征向量.html">
+            
+                <a href="../Chapter3/线性代数linalg/求解特征值和特征向量.html">
+            
+                    
+                    求解特征值和特征向量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../Chapter3/拟合与优化optimize/优化算法optimize.html">
+            
+                <a href="../Chapter3/拟合与优化optimize/优化算法optimize.html">
+            
+                    
+                    拟合与优化optimize
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.3.1" data-path="../Chapter3/拟合与优化optimize/最小二乘法拟合leastsq.html">
+            
+                <a href="../Chapter3/拟合与优化optimize/最小二乘法拟合leastsq.html">
+            
+                    
+                    最小二乘法函数拟合leastsq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3.2" data-path="../Chapter3/拟合与优化optimize/拟合optimize.curve_fit.html">
+            
+                <a href="../Chapter3/拟合与优化optimize/拟合optimize.curve_fit.html">
+            
+                    
+                    拟合curve_fit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3.3" data-path="../Chapter3/拟合与优化optimize/求解非线性方程组fsolve.html">
+            
+                <a href="../Chapter3/拟合与优化optimize/求解非线性方程组fsolve.html">
+            
+                    
+                    求解非线性方程组fsolve
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3.4" data-path="../Chapter3/拟合与优化optimize/函数最小值optimize.minimize.html">
+            
+                <a href="../Chapter3/拟合与优化optimize/函数最小值optimize.minimize.html">
+            
+                    
+                    函数最小值optimize.minimize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3.5" data-path="../Chapter3/拟合与优化optimize/全局最优点basinhopping.html">
+            
+                <a href="../Chapter3/拟合与优化optimize/全局最优点basinhopping.html">
+            
+                    
+                    全局最优点basinhopping
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../Chapter3/插值interpolate/插值interpolate.html">
+            
+                <a href="../Chapter3/插值interpolate/插值interpolate.html">
+            
+                    
+                    插值interpolate
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.4.1" data-path="../Chapter3/插值interpolate/一维插值interp1d.html">
+            
+                <a href="../Chapter3/插值interpolate/一维插值interp1d.html">
+            
+                    
+                    一维插值interp1d
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4.2" data-path="../Chapter3/插值interpolate/多维插值interp2d.html">
+            
+                <a href="../Chapter3/插值interpolate/多维插值interp2d.html">
+            
+                    
+                    多维插值interp2d
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4.3" data-path="../Chapter3/插值interpolate/牛顿插值.html">
+            
+                <a href="../Chapter3/插值interpolate/牛顿插值.html">
+            
+                    
+                    牛顿插值
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >NumPy 矩阵库(Matrix)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#numpy-&#x77E9;&#x9635;&#x5E93;matrix">NumPy &#x77E9;&#x9635;&#x5E93;(Matrix)</a></li><ul><li><a href="#matlibempty">matlib.empty()</a></li><li><a href="#numpymatlibzeros">numpy.matlib.zeros()</a></li><li><a href="#numpymatlibones">numpy.matlib.ones()</a></li><li><a href="#numpymatlibeye">numpy.matlib.eye()</a></li><li><a href="#numpymatlibidentity">numpy.matlib.identity()</a></li><li><a href="#numpymatlibrand">numpy.matlib.rand()</a></li><li><a href="#numpmat">nump.mat()</a></li><li><a href="#&#x521B;&#x5EFA;&#x5E38;&#x89C1;&#x7684;&#x77E9;&#x9635;">&#x521B;&#x5EFA;&#x5E38;&#x89C1;&#x7684;&#x77E9;&#x9635;</a></li><li><a href="#&#x77E9;&#x9635;&#x8FD0;&#x7B97;">&#x77E9;&#x9635;&#x8FD0;&#x7B97;</a></li><ul><li><a href="#&#x77E9;&#x9635;&#x76F8;&#x4E58;">&#x77E9;&#x9635;&#x76F8;&#x4E58;</a></li><li><a href="#&#x77E9;&#x9635;&#x70B9;&#x4E58;&#x77E9;&#x9635;&#x5BF9;&#x5E94;&#x5143;&#x7D20;&#x76F8;&#x4E58;">&#x77E9;&#x9635;&#x70B9;&#x4E58;(&#x77E9;&#x9635;&#x5BF9;&#x5E94;&#x5143;&#x7D20;&#x76F8;&#x4E58;)</a></li><li><a href="#&#x77E9;&#x9635;&#x6C42;&#x9006;&#xFF0C;&#x8F6C;&#x7F6E;">&#x77E9;&#x9635;&#x6C42;&#x9006;&#xFF0C;&#x8F6C;&#x7F6E;</a></li><li><a href="#&#x77E9;&#x9635;&#x7684;&#x5206;&#x9694;&#x548C;&#x5408;&#x5E76;">&#x77E9;&#x9635;&#x7684;&#x5206;&#x9694;&#x548C;&#x5408;&#x5E76;</a></li></ul><li><a href="#&#x6269;&#x5C55;&#x77E9;&#x9635;&#x51FD;&#x6570;tile">&#x6269;&#x5C55;&#x77E9;&#x9635;&#x51FD;&#x6570;tile()</a></li></ul></ul></div><a href="#numpy-&#x77E9;&#x9635;&#x5E93;matrix" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="numpy-&#x77E9;&#x9635;&#x5E93;matrix"><a name="numpy-&#x77E9;&#x9635;&#x5E93;matrix" class="anchor-navigation-ex-anchor" href="#numpy-&#x77E9;&#x9635;&#x5E93;matrix"><i class="fa fa-link" aria-hidden="true"></i></a>NumPy &#x77E9;&#x9635;&#x5E93;(Matrix)</h1>
+<p>NumPy &#x4E2D;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#x5E93; numpy.matlib&#xFF0C;&#x8BE5;&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#xFF0C;&#x800C;&#x4E0D;&#x662F; ndarray &#x5BF9;&#x8C61;&#x3002;
+&#x4E00;&#x4E2A;m*n &#x7684;&#x77E9;&#x9635;&#x662F;&#x4E00;&#x4E2A;&#x7531;&#x884C;&#xFF08;mrow&#xFF09;&#x5217;n&#xFF08;column&#xFF09;&#x5143;&#x7D20;&#x6392;&#x5217;&#x6210;&#x7684;&#x77E9;&#x5F62;&#x9635;&#x5217;&#x3002;</p>
+<p>&#x77E9;&#x9635;&#x91CC;&#x7684;&#x5143;&#x7D20;&#x53EF;&#x4EE5;&#x662F;&#x6570;&#x5B57;&#x3001;&#x7B26;&#x53F7;&#x6216;&#x6570;&#x5B66;&#x5F0F;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E2A;&#x7531; 6 &#x4E2A;&#x6570;&#x5B57;&#x5143;&#x7D20;&#x6784;&#x6210;&#x7684; 2 &#x884C; 3 &#x5217;&#x7684;&#x77E9;&#x9635;&#xFF1A;</p>
+<h2 id="matlibempty"><a name="matlibempty" class="anchor-navigation-ex-anchor" href="#matlibempty"><i class="fa fa-link" aria-hidden="true"></i></a>matlib.empty()</h2>
+<p>matlib.empty() &#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x77E9;&#x9635;&#xFF0C;&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;
+<code>numpy.matlib.empty(shape, dtype, order)</code></p>
+<p>&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x5F62;&#x72B6;&#x548C;&#x7C7B;&#x578B;&#x7684;&#x65B0;&#x77E9;&#x9635;&#xFF0C;&#x800C;&#x4E0D;&#x521D;&#x59CB;&#x5316;&#x6761;&#x76EE;&#x3002;</p>
+<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li>shape: &#x5B9A;&#x4E49;&#x65B0;&#x77E9;&#x9635;&#x5F62;&#x72B6;&#x7684;&#x6574;&#x6570;&#x6216;&#x6574;&#x6570;&#x5143;&#x7EC4;</li>
+<li>Dtype: &#x53EF;&#x9009;&#xFF0C;&#x6570;&#x636E;&#x7C7B;&#x578B;</li>
+<li>order: C&#xFF08;&#x884C;&#x5E8F;&#x4F18;&#x5148;&#xFF09; &#x6216;&#x8005; F&#xFF08;&#x5217;&#x5E8F;&#x4F18;&#x5148;&#xFF09;</li>
+</ul>
+<pre class="language-"><code class="lang-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> numpy<span class="token punctuation">.</span>matlib
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>matlib<span class="token punctuation">.</span>empty<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token comment"># filled with random data</span>
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span>  <span class="token number">6.76425276e-320</span><span class="token punctuation">,</span>   <span class="token number">9.79033856e-307</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span>  <span class="token number">7.39337286e-309</span><span class="token punctuation">,</span>   <span class="token number">3.22135945e-309</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>        <span class="token comment">#random</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>matlib<span class="token punctuation">.</span>empty<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">)</span>
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">6600475</span><span class="token punctuation">,</span>        <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">6586976</span><span class="token punctuation">,</span> <span class="token number">22740995</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>                          <span class="token comment">#random</span>
+</code></pre>
+<h2 id="numpymatlibzeros"><a name="numpymatlibzeros" class="anchor-navigation-ex-anchor" href="#numpymatlibzeros"><i class="fa fa-link" aria-hidden="true"></i></a>numpy.matlib.zeros()</h2>
+<p>numpy.matlib.zeros() &#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4EE5; 0 &#x586B;&#x5145;&#x7684;&#x77E9;&#x9635;&#x3002;</p>
+<ul>
+<li><p><code>shape</code><strong>&#xFF1A;int&#x6216;ints&#x5E8F;&#x5217;&#x77E9;&#x9635;&#x7684;&#x5F62;&#x72B6;</strong></p>
+</li>
+<li><p><code>dtype</code><strong>&#xFF1A;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x9009;&#x77E9;&#x9635;&#x7684;&#x6240;&#x9700;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;float&#x3002;</strong></p>
+</li>
+<li><code>order</code>&#xFF1A;{&apos;C&apos;&#xFF0C;&apos;F&apos;}&#xFF0C;&#x53EF;&#x9009;&#x662F;&#x5426;&#x4EE5;C&#x6216;Fortran&#x8FDE;&#x7EED;&#x987A;&#x5E8F;&#x5B58;&#x50A8;&#x7ED3;&#x679C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x201C;C&#x201D;&#x3002;</li>
+</ul>
+<p>&#x5982;&#x679C;<code>shape</code>&#x5177;&#x6709;&#x957F;&#x5EA6;&#x4E00;&#x5373;<code>(N,)</code>&#x6216;&#x8005;&#x662F;&#x6807;&#x91CF;<code>N</code>&#xFF0C;&#x5219;<em>out</em>&#x5F62;&#x72B6;&#x77E9;&#x9635;<code>(1,N)</code>&#x3002;</p>
+<pre class="language-"><code class="lang-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> numpy<span class="token punctuation">.</span>matlib
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>matlib<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>matlib<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="numpymatlibones"><a name="numpymatlibones" class="anchor-navigation-ex-anchor" href="#numpymatlibones"><i class="fa fa-link" aria-hidden="true"></i></a>numpy.matlib.ones()</h2>
+<p>&#x77E9;&#x9635;&#x7684;&#x4E00;&#x3002;</p>
+<p>&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x5F62;&#x72B6;&#x548C;&#x7C7B;&#x578B;&#x7684;&#x77E9;&#x9635;&#xFF0C;&#x7528;&#x4E00;&#x4E2A;&#x586B;&#x5145;&#x3002;</p>
+<ul>
+<li><p><strong>shape</strong>&#xFF1A;{sequence of ints&#xFF0C;int} &#x77E9;&#x9635;&#x7684;&#x5F62;&#x72B6;</p>
+</li>
+<li><p><strong>dtype</strong>&#xFF1A;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x9009; &#x77E9;&#x9635;&#x7684;&#x6240;&#x9700;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;np.float64&#x3002;</p>
+</li>
+<li><p><strong>order</strong>&#xFF1A;{&apos;C&apos;&#xFF0C;&apos;F&apos;}&#xFF0C;&#x53EF;&#x9009;&#x662F;&#x5426;&#x4EE5;C&#x6216;Fortran&#x8FDE;&#x7EED;&#x987A;&#x5E8F;&#x5B58;&#x50A8;&#x77E9;&#x9635;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x201C;C&#x201D;&#x3002;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>matlib<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>matlib<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="numpymatlibeye"><a name="numpymatlibeye" class="anchor-navigation-ex-anchor" href="#numpymatlibeye"><i class="fa fa-link" aria-hidden="true"></i></a>numpy.matlib.eye()</h2>
+<p>numpy.matlib.eye() &#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#xFF0C;&#x5BF9;&#x89D2;&#x7EBF;&#x5143;&#x7D20;&#x4E3A; 1&#xFF0C;&#x5176;&#x4ED6;&#x4F4D;&#x7F6E;&#x4E3A;&#x96F6;&#x3002;</p>
+<p><code>numpy.matlib.eye(n, M,k, dtype)</code>
+&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li>n: &#x8FD4;&#x56DE;&#x77E9;&#x9635;&#x7684;&#x884C;&#x6570;</li>
+<li>M: &#x8FD4;&#x56DE;&#x77E9;&#x9635;&#x7684;&#x5217;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; n</li>
+<li>k: &#x5BF9;&#x89D2;&#x7EBF;&#x7684;&#x7D22;&#x5F15; , 0&#x8868;&#x793A;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#xFF0C;&#x6B63;&#x503C;&#x8868;&#x793A;&#x4E0A;&#x5BF9;&#x89D2;&#x7EBF;&#xFF0C;&#x8D1F;&#x503C;&#x8868;&#x793A;&#x4E0B;&#x5BF9;&#x89D2;&#x7EBF;&#x3002;</li>
+<li>dtype: &#x6570;&#x636E;&#x7C7B;&#x578B;</li>
+</ul>
+<pre class="language-"><code class="lang-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> numpy<span class="token punctuation">.</span>matlib
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>matlib<span class="token punctuation">.</span>eye<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> k<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token builtin">float</span><span class="token punctuation">)</span>
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<p><a href="http://doc.codingdict.com/NumPy_v111/reference/generated/numpy.eye.html#numpy.eye" target="_blank"><code>numpy.eye</code></a> &#x7B49;&#x6548;&#x6570;&#x7EC4;&#x529F;&#x80FD;&#x3002;</p>
+<h2 id="numpymatlibidentity"><a name="numpymatlibidentity" class="anchor-navigation-ex-anchor" href="#numpymatlibidentity"><i class="fa fa-link" aria-hidden="true"></i></a>numpy.matlib.identity()</h2>
+<p><code>numpy.matlib.identity(n,dtype=None)</code>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x5355;&#x4F4D;&#x77E9;&#x9635;&#x3002;</p>
+<p>&#x5355;&#x4F4D;&#x77E9;&#x9635;&#x662F;&#x4E2A;&#x65B9;&#x9635;&#xFF0C;&#x4ECE;&#x5DE6;&#x4E0A;&#x89D2;&#x5230;&#x53F3;&#x4E0B;&#x89D2;&#x7684;&#x5BF9;&#x89D2;&#x7EBF;&#xFF08;&#x79F0;&#x4E3A;&#x4E3B;&#x5BF9;&#x89D2;&#x7EBF;&#xFF09;&#x4E0A;&#x7684;&#x5143;&#x7D20;&#x5747;&#x4E3A; 1&#xFF0C;&#x9664;&#x6B64;&#x4EE5;&#x5916;&#x5168;&#x90FD;&#x4E3A; 0&#x3002;</p>
+<ul>
+<li><p><strong>n</strong>&#xFF1A;int &#x8FD4;&#x56DE;&#x7684;&#x5355;&#x4F4D;&#x77E9;&#x9635;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
+</li>
+<li><p><strong>dtype</strong>&#xFF1A;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x9009;  &#x8F93;&#x51FA;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;&#x9ED8;&#x8BA4;&#x4E3A;<code>float</code>&#x3002;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> numpy<span class="token punctuation">.</span>matlib
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>matlib<span class="token punctuation">.</span>identity<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">)</span>
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<p><a href="http://doc.codingdict.com/NumPy_v111/reference/generated/numpy.identity.html#numpy.identity" target="_blank"><code>numpy.identity</code></a> &#x7B49;&#x6548;&#x6570;&#x7EC4;&#x529F;&#x80FD;&#x3002;</p>
+<h2 id="numpymatlibrand"><a name="numpymatlibrand" class="anchor-navigation-ex-anchor" href="#numpymatlibrand"><i class="fa fa-link" aria-hidden="true"></i></a>numpy.matlib.rand()</h2>
+<p><code>numpy.matlib.rand(*args)</code>&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7ED9;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x77E9;&#x9635;&#xFF0C;&#x6570;&#x636E;&#x662F;&#x968F;&#x673A;&#x586B;&#x5145;&#x7684;&#x3002;</p>
+<p>&#x8FD4;&#x56DE;&#x5177;&#x6709;&#x7ED9;&#x5B9A;&#x5F62;&#x72B6;&#x7684;&#x968F;&#x673A;&#x503C;&#x77E9;&#x9635;&#x3002;</p>
+<p>&#x521B;&#x5EFA;&#x7ED9;&#x5B9A;&#x5F62;&#x72B6;&#x7684;&#x77E9;&#x9635;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;<code>[0&#xFF0C; 1&#xFF09;</code>&#x7684;&#x5747;&#x5300;&#x5206;&#x5E03;&#x7684;&#x968F;&#x673A;&#x6837;&#x672C;&#x4F20;&#x64AD;&#x5B83;&#x3002;</p>
+<p><strong>* args</strong>&#xFF1A;&#x53C2;&#x6570;</p>
+<p>&#x8F93;&#x51FA;&#x5F62;&#x72B6;&#x3002;&#x5982;&#x679C;&#x7ED9;&#x5B9A;&#x4E3A;N&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x6BCF;&#x4E2A;&#x6574;&#x6570;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x7EF4;&#x5EA6;&#x7684;&#x5927;&#x5C0F;&#x3002;&#x5982;&#x679C;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7EC4;&#xFF0C;&#x8FD9;&#x4E2A;&#x5143;&#x7EC4;&#x7ED9;&#x51FA;&#x5B8C;&#x6574;&#x7684;&#x5F62;&#x72B6;&#x3002;</p>
+<pre class="language-"><code class="lang-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">import</span> numpy<span class="token punctuation">.</span>matlib
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>matlib<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">0.68340382</span><span class="token punctuation">,</span>  <span class="token number">0.67926887</span><span class="token punctuation">,</span>  <span class="token number">0.83271405</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0.00793551</span><span class="token punctuation">,</span>  <span class="token number">0.20468222</span><span class="token punctuation">,</span>  <span class="token number">0.95253525</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>       <span class="token comment">#random</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>matlib<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">0.84682055</span><span class="token punctuation">,</span>  <span class="token number">0.73626594</span><span class="token punctuation">,</span>  <span class="token number">0.11308016</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0.85429008</span><span class="token punctuation">,</span>  <span class="token number">0.3294825</span> <span class="token punctuation">,</span>  <span class="token number">0.89139555</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>       <span class="token comment">#random</span>
+&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5143;&#x7EC4;&#xFF0C;&#x5219;&#x5FFD;&#x7565;&#x5176;&#x4ED6;&#x53C2;&#x6570;&#xFF1A;
+
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>matlib<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">0.46898646</span><span class="token punctuation">,</span>  <span class="token number">0.15163588</span><span class="token punctuation">,</span>  <span class="token number">0.95188261</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0.59208621</span><span class="token punctuation">,</span>  <span class="token number">0.09561818</span><span class="token punctuation">,</span>  <span class="token number">0.00583606</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>       <span class="token comment">#random</span>
+</code></pre>
+<h2 id="numpmat"><a name="numpmat" class="anchor-navigation-ex-anchor" href="#numpmat"><i class="fa fa-link" aria-hidden="true"></i></a>nump.mat()</h2>
+<p>&#x5C06;&#x8F93;&#x5165;&#x89E3;&#x91CA;&#x4E3A;&#x77E9;&#x9635;&#x3002;</p>
+<p><code>numpy.mat(data, dtype=None)</code></p>
+<ul>
+<li><p><strong>data</strong>&#xFF1A;array_like &#x8F93;&#x5165;&#x6570;&#x636E;&#x3002;</p>
+</li>
+<li><p><strong>dtype</strong>&#xFF1A;&#x6570;&#x636E;&#x7C7B;&#x578B;  &#x8F93;&#x51FA;&#x77E9;&#x9635;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;</p>
+</li>
+</ul>
+<pre class="language-"><code class="lang-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">from</span> numpy <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a1<span class="token operator">=</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a1
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a1<span class="token operator">=</span>mat<span class="token punctuation">(</span>a1<span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a1
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> shape<span class="token punctuation">(</span>a1<span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> b<span class="token operator">=</span>matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> shape<span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="&#x521B;&#x5EFA;&#x5E38;&#x89C1;&#x7684;&#x77E9;&#x9635;"><a name="&#x521B;&#x5EFA;&#x5E38;&#x89C1;&#x7684;&#x77E9;&#x9635;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x5E38;&#x89C1;&#x7684;&#x77E9;&#x9635;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA;&#x5E38;&#x89C1;&#x7684;&#x77E9;&#x9635;</h2>
+<pre class="language-"><code class="lang-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>data1<span class="token operator">=</span>mat<span class="token punctuation">(</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;3*3&#x7684;&#x96F6;&#x77E9;&#x9635;&#xFF0C;&#x77E9;&#x9635;&#x8FD9;&#x91CC;zeros&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;tuple&#x7C7B;&#x578B;(3,3)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> data1
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>data2<span class="token operator">=</span>mat<span class="token punctuation">(</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;2*4&#x7684;1&#x77E9;&#x9635;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x6D6E;&#x70B9;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x65F6;int&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;dtype=int</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> data2
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>data3<span class="token operator">=</span>mat<span class="token punctuation">(</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#&#x8FD9;&#x91CC;&#x7684;random&#x6A21;&#x5757;&#x4F7F;&#x7528;&#x7684;&#x662F;numpy&#x4E2D;&#x7684;random&#x6A21;&#x5757;&#xFF0C;random.rand(2,2)&#x521B;&#x5EFA;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#xFF0C;&#x9700;&#x8981;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x6210;#matrix</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> data3
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">0.57341802</span><span class="token punctuation">,</span>  <span class="token number">0.51016034</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0.56438599</span><span class="token punctuation">,</span>  <span class="token number">0.70515605</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>data4<span class="token operator">=</span>mat<span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span>size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#&#x751F;&#x6210;&#x4E00;&#x4E2A;3*3&#x7684;0-10&#x4E4B;&#x95F4;&#x7684;&#x968F;&#x673A;&#x6574;&#x6570;&#x77E9;&#x9635;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x4E0B;&#x754C;&#x5219;&#x53EF;&#x4EE5;&#x591A;&#x52A0;&#x4E00;&#x4E2A;&#x53C2;&#x6570;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> data4
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>data5<span class="token operator">=</span>mat<span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span>size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#&#x4EA7;&#x751F;&#x4E00;&#x4E2A;2-8&#x4E4B;&#x95F4;&#x7684;&#x968F;&#x673A;&#x6574;&#x6570;&#x77E9;&#x9635;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> data5
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>data6<span class="token operator">=</span>mat<span class="token punctuation">(</span>eye<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span>dtype<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#&#x4EA7;&#x751F;&#x4E00;&#x4E2A;2*2&#x7684;&#x5BF9;&#x89D2;&#x77E9;&#x9635;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> data6
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+a1<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+a2<span class="token operator">=</span>mat<span class="token punctuation">(</span>diag<span class="token punctuation">(</span>a1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">#&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5BF9;&#x89D2;&#x7EBF;&#x4E3A;1&#x3001;2&#x3001;3&#x7684;&#x5BF9;&#x89D2;&#x77E9;&#x9635;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a2
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="&#x77E9;&#x9635;&#x8FD0;&#x7B97;"><a name="&#x77E9;&#x9635;&#x8FD0;&#x7B97;" class="anchor-navigation-ex-anchor" href="#&#x77E9;&#x9635;&#x8FD0;&#x7B97;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x77E9;&#x9635;&#x8FD0;&#x7B97;</h2>
+<h3 id="&#x77E9;&#x9635;&#x76F8;&#x4E58;"><a name="&#x77E9;&#x9635;&#x76F8;&#x4E58;" class="anchor-navigation-ex-anchor" href="#&#x77E9;&#x9635;&#x76F8;&#x4E58;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x77E9;&#x9635;&#x76F8;&#x4E58;</h3>
+<pre class="language-"><code class="lang-python">a1<span class="token operator">=</span>mat<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      
+a2<span class="token operator">=</span>mat<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+a3<span class="token operator">=</span>a1<span class="token operator">*</span>a2<span class="token punctuation">;</span>
+<span class="token comment">#1*2&#x7684;&#x77E9;&#x9635;&#x4E58;&#x4EE5;2*1&#x7684;&#x77E9;&#x9635;&#xFF0C;&#x5F97;&#x5230;1*1&#x7684;&#x77E9;&#x9635;</span>
+</code></pre>
+<h3 id="&#x77E9;&#x9635;&#x70B9;&#x4E58;&#x77E9;&#x9635;&#x5BF9;&#x5E94;&#x5143;&#x7D20;&#x76F8;&#x4E58;"><a name="&#x77E9;&#x9635;&#x70B9;&#x4E58;&#x77E9;&#x9635;&#x5BF9;&#x5E94;&#x5143;&#x7D20;&#x76F8;&#x4E58;" class="anchor-navigation-ex-anchor" href="#&#x77E9;&#x9635;&#x70B9;&#x4E58;&#x77E9;&#x9635;&#x5BF9;&#x5E94;&#x5143;&#x7D20;&#x76F8;&#x4E58;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x77E9;&#x9635;&#x70B9;&#x4E58;(&#x77E9;&#x9635;&#x5BF9;&#x5E94;&#x5143;&#x7D20;&#x76F8;&#x4E58;)</h3>
+<p>&#x77E9;&#x9635;&#x5BF9;&#x5E94;&#x5143;&#x7D20;&#x76F8;&#x4E58;</p>
+<pre class="language-"><code class="lang-python">a1<span class="token operator">=</span>mat<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+a2<span class="token operator">=</span>mat<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+a3<span class="token operator">=</span>multiply<span class="token punctuation">(</span>a1<span class="token punctuation">,</span>a2<span class="token punctuation">)</span>
+<span class="token comment"># matrix([[6, 2]])</span>
+</code></pre>
+<h3 id="&#x77E9;&#x9635;&#x6C42;&#x9006;&#xFF0C;&#x8F6C;&#x7F6E;"><a name="&#x77E9;&#x9635;&#x6C42;&#x9006;&#xFF0C;&#x8F6C;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#&#x77E9;&#x9635;&#x6C42;&#x9006;&#xFF0C;&#x8F6C;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x77E9;&#x9635;&#x6C42;&#x9006;&#xFF0C;&#x8F6C;&#x7F6E;</h3>
+<p>&#x77E9;&#x9635;&#x6C42;&#x9006;</p>
+<pre class="language-"><code class="lang-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>a1<span class="token operator">=</span>mat<span class="token punctuation">(</span>eye<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a1
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">0.5</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">.</span> <span class="token punctuation">,</span>  <span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>a2<span class="token operator">=</span>a1<span class="token punctuation">.</span>I  <span class="token comment">#&#x6C42;&#x77E9;&#x9635;matrix([[0.5,0],[0,0.5]])&#x7684;&#x9006;&#x77E9;&#x9635;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a2
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&#x77E9;&#x9635;&#x8F6C;&#x7F6E;</p>
+<pre class="language-"><code class="lang-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a1<span class="token operator">=</span>mat<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a1
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a2<span class="token operator">=</span>a1<span class="token punctuation">.</span>T
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a2
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="&#x77E9;&#x9635;&#x7684;&#x5206;&#x9694;&#x548C;&#x5408;&#x5E76;"><a name="&#x77E9;&#x9635;&#x7684;&#x5206;&#x9694;&#x548C;&#x5408;&#x5E76;" class="anchor-navigation-ex-anchor" href="#&#x77E9;&#x9635;&#x7684;&#x5206;&#x9694;&#x548C;&#x5408;&#x5E76;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x77E9;&#x9635;&#x7684;&#x5206;&#x9694;&#x548C;&#x5408;&#x5E76;</h3>
+<p>&#x77E9;&#x9635;&#x7684;&#x5206;&#x9694;&#xFF0C;&#x540C;&#x5217;&#x8868;&#x548C;&#x6570;&#x7EC4;&#x7684;&#x5206;&#x9694;&#x4E00;&#x81F4;&#x3002;</p>
+<pre class="language-"><code class="lang-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>a<span class="token operator">=</span>mat<span class="token punctuation">(</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>b<span class="token operator">=</span>a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>  <span class="token comment">#&#x5206;&#x5272;&#x51FA;&#x7B2C;&#x4E8C;&#x884C;&#x4EE5;&#x540E;&#x7684;&#x884C;&#x548C;&#x7B2C;&#x4E8C;&#x5217;&#x4EE5;&#x540E;&#x7684;&#x5217;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> b
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<p><strong>&#x77E9;&#x9635;&#x7684;&#x5408;&#x5E76;</strong></p>
+<pre class="language-"><code class="lang-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>a<span class="token operator">=</span>mat<span class="token punctuation">(</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> a
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>b<span class="token operator">=</span>mat<span class="token punctuation">(</span>eye<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> b
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>c<span class="token operator">=</span>vstack<span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">#&#x6309;&#x5217;&#x5408;&#x5E76;&#xFF0C;&#x5373;&#x589E;&#x52A0;&#x884C;&#x6570;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> c
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>d<span class="token operator">=</span>hstack<span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">#&#x6309;&#x884C;&#x5408;&#x5E76;&#xFF0C;&#x5373;&#x884C;&#x6570;&#x4E0D;&#x53D8;&#xFF0C;&#x6269;&#x5C55;&#x5217;&#x6570;</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> d
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span>  <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="&#x6269;&#x5C55;&#x77E9;&#x9635;&#x51FD;&#x6570;tile"><a name="&#x6269;&#x5C55;&#x77E9;&#x9635;&#x51FD;&#x6570;tile" class="anchor-navigation-ex-anchor" href="#&#x6269;&#x5C55;&#x77E9;&#x9635;&#x51FD;&#x6570;tile"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6269;&#x5C55;&#x77E9;&#x9635;&#x51FD;&#x6570;tile()</h2>
+<p><code>tile(inX, (i,j))</code> ;i&#x662F;&#x6269;&#x5C55;&#x4E2A;&#x6570;&#xFF0C;j&#x662F;&#x6269;&#x5C55;&#x957F;&#x5EA6;</p>
+<pre class="language-"><code class="lang-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>x<span class="token operator">=</span>mat<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> x
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> tile<span class="token punctuation">(</span>x<span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>           <span class="token comment">#&#x5373;&#x5C06;x&#x6269;&#x5C55;3&#x4E2A;&#xFF0C;j=1,&#x8868;&#x793A;&#x5176;&#x5217;&#x6570;&#x4E0D;&#x53D8;</span>
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> tile<span class="token punctuation">(</span>x<span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>           <span class="token comment">#x&#x6269;&#x5C55;2&#x6B21;&#xFF0C;j=2,&#x6A2A;&#x5411;&#x6269;&#x5C55;</span>
+matrix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">  </span><span class="footer-modification">Update time&#xFF1A;
+2020-05-25 
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Numpy 上三角矩阵triu和下三角矩阵tril.html" class="navigation navigation-prev " aria-label="Previous page: Numpy 上三角矩阵triu和下三角矩阵tril">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="NumPy 线性代数中的运算.html" class="navigation navigation-next " aria-label="Next page: NumPy 线性代数中的运算">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"NumPy 矩阵库(Matrix)","level":"2.1.15","depth":2,"next":{"title":"NumPy 线性代数中的运算","level":"2.1.16","depth":2,"path":"Chapter1/NumPy 线性代数中的运算.md","ref":"Chapter1/NumPy 线性代数中的运算.md","articles":[]},"previous":{"title":"Numpy 上三角矩阵triu和下三角矩阵tril","level":"2.1.14","depth":2,"path":"Chapter1/Numpy 上三角矩阵triu和下三角矩阵tril.md","ref":"Chapter1/Numpy 上三角矩阵triu和下三角矩阵tril.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","expandable-chapters","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","advanced-emoji","lightbox","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD "},"prism":{"css":["prism-themes/themes/prism-vs.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"prism-themes":{},"custom-favicon":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HHG","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python 学习记录","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"。"},"file":{"path":"Chapter1/NumPy 矩阵库Matrix.md","mtime":"2020-05-25T13:49:11.647Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-20T02:51:28.455Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
